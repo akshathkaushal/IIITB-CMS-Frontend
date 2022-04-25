@@ -1,0 +1,11 @@
+<div class="sidebar-view-subpost">
+  <div style="color: black; font-weight: bold">Browse Subposts</div>
+  <hr />
+  <span *ngFor="let subpost of subposts">
+        <span class="subpost-text"><a href="/view-subpost/{{subpost.id}}">{{subpost.name}}</a></span>
+        <hr />
+    </span>
+  <div style="text-align: center" *ngIf="displayViewAll">
+    <a style="font-weight: bold" routerLink="/subposts">View All</a>
+  </div>
+</div>
