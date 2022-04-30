@@ -11,23 +11,22 @@
 
           <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
 
-          <select class="form-control" style="margin-top: 10px" [formControlName]="'subredditName'">
-            <option value="" selected disabled>Select Subreddit</option>
+          <select class="form-control" style="margin-top: 10px" [formControlName]="'subpostName'">
+            <option value="" selected disabled>Select Subpost</option>
             <option *ngFor="let subpost of subposts">{{subpost.name}}</option>
           </select>
 
           <editor [formControlName]="'description'" [init]="{
-                        height: 500,
-                        menubar: false,
-                        plugins: [
-                          'advlist autolink lists link image charmap print preview anchor',
-                          'searchreplace visualblocks code fullscreen',
-                          'insertdatetime media table paste code help wordcount'
-                        ],
-                        toolbar:
-                          'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-                      }"></editor>
-
+                      height: 500,
+                      menubar: false,
+                      plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount'
+                      ],
+                      toolbar:
+                        'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
+                    }"></editor>
           <span>
             <div style="margin-top: 5px" class="float-right">
               <button (click)="discardPost()" class="btnDiscard">Discard</button>
@@ -39,8 +38,6 @@
       </form>
     </div>
     <div class="col-md-3">
-<!--      <guidelines></guidelines>-->
-<!--      <about></about>-->
     </div>
   </div>
 </div>

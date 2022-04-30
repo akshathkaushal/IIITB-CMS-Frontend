@@ -2,10 +2,10 @@
   <div style="color: black; font-weight: bold">Browse Subposts</div>
   <hr />
   <span *ngFor="let subpost of subposts">
-        <span class="subpost-text"><a href="/view-subpost/{{subpost.id}}">{{subpost.name}}</a></span>
+        <span class="subpost-text"><a href="/view-post/{{subpost.id}}">{{subpost.name}}</a></span>
         <hr />
     </span>
   <div style="text-align: center" *ngIf="displayViewAll">
-    <a style="font-weight: bold" routerLink="/subposts">View All</a>
+    <a style="font-weight: bold" routerLink="/list-subposts">View All</a>
   </div>
 </div>

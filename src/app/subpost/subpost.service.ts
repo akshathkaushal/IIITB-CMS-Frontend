@@ -11,10 +11,10 @@ export class SubpostService {
   constructor(private httpClient: HttpClient) { }
 
   getAllSubposts() : Observable<Array<SubpostModel>>{
-    return this.httpClient.get<Array<SubpostModel>>('http://localhost:8090/api/subpost/');
+    return this.httpClient.get<Array<SubpostModel>>('http://localhost:8090/api/subpost');
   }
 
   createSubpost(subpostmodel: SubpostModel) : Observable<SubpostModel> {
-    return this.httpClient.post<SubpostModel>('https://localhost:8090/api/subpost', subpostmodel);
+    return this.httpClient.post<SubpostModel>('http://localhost:8090/api/subpost', subpostmodel);
   }
 }

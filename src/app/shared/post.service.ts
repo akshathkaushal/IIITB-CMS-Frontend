@@ -12,19 +12,19 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getAllPosts(): Observable<Array<PostModel>> {
-    return this.httpClient.get<Array<PostModel>>('http://localhost:8090/api/posts');
+    return this.httpClient.get<Array<PostModel>>('http://localhost:8090/api/posts/');
   }
 
   createPost(postPayload: CreatePostPayload): Observable<any> {
-    return this.httpClient.post('https://localhost:8090/api/posts', postPayload);
+    return this.httpClient.post('http://localhost:8090/api/posts/', postPayload);
   }
 
   getPost(id: number) : Observable<PostModel> {
-    return this.httpClient.get<PostModel>('https://localhost:8090/api/posts/'+id);
+    return this.httpClient.get<PostModel>('http://localhost:8090/api/posts/'+id);
   }
 
   getAllPostsByUser(rollNo: string) : Observable<PostModel[]> {
-    return this.httpClient.get<PostModel[]>('https://localhost:8090/api/posts/by-user/' + rollNo);
+    return this.httpClient.get<PostModel[]>('http://localhost:8090/api/posts/by-user/' + rollNo);
   }
 
 }

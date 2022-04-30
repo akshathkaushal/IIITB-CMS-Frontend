@@ -31,7 +31,7 @@ export class CreatePostComponent implements OnInit {
     this.createPostForm = new FormGroup({
       description: new FormControl('', Validators.required),
       postName: new FormControl('', Validators.required),
-      subredditName: new FormControl('', Validators.required),
+      subpostName: new FormControl('', Validators.required),
       url: new FormControl('', Validators.required),
     });
     this.subpostService.getAllSubposts().subscribe((data) => {
@@ -50,6 +50,7 @@ export class CreatePostComponent implements OnInit {
     this.postService.createPost(this.postPayload).subscribe((data) => {
       this.router.navigateByUrl('/');
     }, error => {
+      console.log("Error creating post")
       throwError(error);
     })
   }
