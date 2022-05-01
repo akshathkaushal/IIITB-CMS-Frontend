@@ -20,7 +20,7 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService,
               private commentService: CommentService) {
-    this.rollNo = this.activatedRoute.snapshot.params['name'];
+    this.rollNo = this.activatedRoute.snapshot.params['rollNo'];
 
     this.postService.getAllPostsByUser(this.rollNo).subscribe(data => {
       this.posts = data;

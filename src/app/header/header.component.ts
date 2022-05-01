@@ -11,11 +11,12 @@ import { faUser} from "@fortawesome/free-solid-svg-icons";
 export class HeaderComponent implements OnInit {
 
   faUser = faUser;
-  rollNo: string | any;
-  isLoggedIn: boolean | any;
+  rollNo: string;
+  isLoggedIn: boolean;
 
   constructor(private authService: AuthService, private router: Router) {
-
+    this.rollNo = "",
+    this.isLoggedIn = false
   }
 
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToUserProfile() {
-    this.router.navigateByUrl('/user-profile/' + this.rollNo);
+    this.router.navigateByUrl("/user-profile/" + this.rollNo);
   }
 
   logout() {

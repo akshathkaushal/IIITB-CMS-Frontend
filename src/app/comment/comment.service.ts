@@ -19,7 +19,7 @@ export class CommentService {
   }
 
   getAllCommentsByUser(rollNo: string) {
-    return this.httpClient.get<CommentPayload[]>('http://localhost:8090/api/comments/by-user/' + name);
+    return this.httpClient.get<CommentPayload[]>('http://localhost:8090/api/comments/by-user/' + rollNo);
   }
 
 }
