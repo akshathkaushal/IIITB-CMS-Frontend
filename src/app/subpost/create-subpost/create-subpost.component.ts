@@ -40,7 +40,7 @@ export class CreateSubpostComponent implements OnInit {
     this.subpostModel.name = this.createSubpostForm.get('title').value;
     this.subpostModel.description = this.createSubpostForm.get('description').value;
     this.subpostService.createSubpost(this.subpostModel).subscribe(data => {
-      this.router.navigateByUrl('/list-subreddits');
+      this.router.navigateByUrl('/list-subposts');
     }, error => {
       console.log("Error occured while creating subpost");
     });

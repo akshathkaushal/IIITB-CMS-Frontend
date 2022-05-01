@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
@@ -24,6 +24,8 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import {AuthService} from "./auth/shared/auth.service";
+import {TokenInterceptor} from "./token-interceptor";
 
 @NgModule({
   declarations: [
@@ -54,7 +56,14 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     EditorModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

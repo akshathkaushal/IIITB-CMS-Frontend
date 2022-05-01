@@ -44,6 +44,7 @@ export class ViewPostComponent implements OnInit {
       this.commentForm.get('text').setValue('');
       this.getCommentsForPost();
     }, error => {
+      console.log("Cannot post comment");
       throwError(error);
     });
   }
