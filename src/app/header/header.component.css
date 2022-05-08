@@ -1,13 +1,13 @@
 header{
-  border-radius: 1px solid;
+  border-radius: 1px;
 }
-.reddit-icon-svg{
+.cms-icon-svg{
+  margin-left: 100px;
   height: 50px;
-  padding: 8px 8px 8px 0;
   width: 50px;
 }
 
-.reddit-text{
+.cms-text{
   font-weight: 700;
   height: 50px;
   width: 50px;
@@ -26,7 +26,6 @@ header{
   box-sizing: border-box;
   text-align: center;
   letter-spacing: 1px;
-  text-decoration: none;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .5px;
@@ -34,12 +33,14 @@ header{
   text-transform: uppercase;
   padding: 3px 16px;
   opacity: 1;
+  margin-right: 65px;
 }
 
 .sign-up{
   background-color: #0079D3;
   border-color: #0079D3;
   color: aliceblue;
+  margin-right: 10px;
 }
 
 .sign-up:hover{
@@ -64,7 +65,7 @@ header{
   text-transform: uppercase;
   padding: 3px 16px;
   opacity: 1;
-  border: 0px;
+  margin-right: 65px;
 }
 
 .userdetails:hover{

@@ -1,4 +1,4 @@
-.create-subreddit-container {
+.create-subpost-container {
   margin-top: 10px;
   --post-line-color: #ccc;
   border: 1px solid #ccc;
@@ -12,7 +12,7 @@
   padding: 5px;
 }
 
-.create-subreddit-heading {
+.create-subpost-heading {
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
@@ -21,7 +21,7 @@
   flex: 1;
 }
 
-.btnCreateSubreddit {
+.btnCreateSubpost {
   background-color: #0079D3;
   border-color: #0079D3;
   color: aliceblue;
@@ -38,8 +38,8 @@
   text-transform: uppercase;
   padding: 3px 16px;
   opacity: 1;
-  width: 288px;
-  height: 34px;
+  width: 20%;
+  margin-top: 5px;
 }
 
 .btnDiscard {
@@ -56,8 +56,7 @@
   text-transform: uppercase;
   padding: 3px 16px;
   opacity: 1;
-  width: 288px;
-  height: 34px;
+  width: 20%;
   margin-top: 5px;
   color: #0079D3;
   background-color: transparent;
