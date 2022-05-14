@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 import {SubpostModel} from "../subpost-response";
-import {Router} from "@angular/router";
+import { Router, Routes } from '@angular/router';
 import {SubpostService} from "../subpost.service";
 
 @Component({

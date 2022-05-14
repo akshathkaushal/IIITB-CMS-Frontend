@@ -62,7 +62,8 @@ import {TokenInterceptor} from "./token-interceptor";
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    HttpClient,
   ],
   bootstrap: [AppComponent]
 })

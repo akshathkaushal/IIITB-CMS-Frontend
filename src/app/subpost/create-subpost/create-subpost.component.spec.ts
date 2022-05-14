@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateSubpostComponent } from './create-subpost.component';
+import {HttpClientModule} from "@angular/common/http";
 
 describe('CreateSubpostComponent', () => {
   let component: CreateSubpostComponent;

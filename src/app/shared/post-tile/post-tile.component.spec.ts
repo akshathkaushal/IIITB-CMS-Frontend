@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostTileComponent } from './post-tile.component';
+import {HttpClientModule} from "@angular/common/http";
 
 describe('PostTileComponent', () => {
   let component: PostTileComponent;
