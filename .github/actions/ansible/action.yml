@@ -1,8 +1,5 @@
----
-- name: Pull docker image of Frontend
-  hosts: all
-  tasks:
-    - name: Pull frontend image
-      docker_image:
-        name: akshathkaushal7/spe-project-frontend:latest
-        source: pull
+name: "Ansible"
+description: "Runs an Ansible playbook"
+runs:
+  using: "docker"
+  image: "Dockerfile"
