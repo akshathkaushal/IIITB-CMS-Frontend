@@ -2,7 +2,8 @@
 
 echo "Ansible Entrypoint"
 echo "This is the secret: $SSH_PASSWORD"
-echo "ansible_ssh_pass: $SSH_PASSWORD" >> /hosts.yml
-echo "ansible_become_pass: $SSH_PASSWORD" >> /hosts.yml
+echo "ansible_sudo_pass: $SSH_PASSWORD" >> /hosts.yml
+#echo "ansible_ssh_pass: $SSH_PASSWORD" >> /hosts.yml
+#echo "ansible_become_pass: $SSH_PASSWORD" >> /hosts.yml
 
-ansible-playbook ansible/playbook.yml --user akshath
+ansible-playbook ansible/playbook.yml
