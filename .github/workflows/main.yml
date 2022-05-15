@@ -43,8 +43,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/ansible
-        with:
-          playbook: action.yml
-          inventory: hosts
-
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
 
