@@ -1,6 +1,5 @@
 ---
-- name: Ansible
-  description: Runs an Ansible playbook
+- name: Pull docker image of Frontend
   hosts: all
   tasks:
     - name: Pull frontend image
