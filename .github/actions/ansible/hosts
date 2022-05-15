@@ -1,0 +1,6 @@
+[remotehosts]
+localhost ansible_port=3022
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=akshath
