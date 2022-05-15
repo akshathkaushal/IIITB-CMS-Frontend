@@ -10,5 +10,10 @@
     - name: remove docker images
       shell: docker image rm -f akshathkaushal7/spe-project-frontend:latest
 
-    - name: create docker image
+    - name: pull docker image
+      docker_image:
+        name: akshathkaushal7/spe-project-frontend
+        source: pull
+
+    - name: run docker image
       shell: docker run -d -p 80:80 --name spe-project-frontend-container akshathkaushal7/spe-project-frontend:latest
