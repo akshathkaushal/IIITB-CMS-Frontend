@@ -38,3 +38,11 @@ jobs:
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
+      steps:
+        - uses: actions/checkout@v2
+        - uses: ./.github/actions/ansible
+          with:
+            playbook: action.yml
+            inventory: hosts
+
+

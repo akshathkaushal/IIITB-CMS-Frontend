@@ -1,0 +1,9 @@
+---
+- name: Ansible
+  description: Runs an Ansible playbook
+  hosts: all
+  tasks:
+    - name: Pull frontend image
+      docker_image:
+        name: akshathkaushal7/spe-project-frontend:latest
+        source: pull
