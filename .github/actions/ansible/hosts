@@ -1,2 +1,0 @@
-[remotehosts]
-localhost ansible_port=3022 ansible_user=akshath
