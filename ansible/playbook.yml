@@ -3,12 +3,12 @@
   become: true
 
   tasks:
-    - name: stop previous version docker
-      shell: docker stop spe-project-frontend-container
-    - name: remove stopped container
-      shell: docker rm -f spe-project-frontend-container
-    - name: remove docker images
-      shell: docker image rm -f akshathkaushal7/spe-project-frontend:latest
+#    - name: stop previous version docker
+#      shell: docker stop spe-project-frontend-container
+#    - name: remove stopped container
+#      shell: docker rm -f spe-project-frontend-container
+#    - name: remove docker images
+#      shell: docker image rm -f akshathkaushal7/spe-project-frontend:latest
 
     - name: pull docker image
       docker_image:
