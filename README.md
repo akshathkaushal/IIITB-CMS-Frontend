@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# AngularIiitbcms
+# IIITB COMPLAINT MANAGEMENT SYSTEM
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
@@ -26,6 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# IIITB-CMS-Frontend
->>>>>>> dd030939d11a75af557b4d5605f6f0435cb08f13
+
+***
+# For IIITBSoC
+Queries welcome at [akshath.kaushal@iiitb.ac.in](mailto:akshath.kaushal@iiitb.ac.in)    
+Check the back end repository [here](https://github.com/akshathkaushal/IIITB-CMS-Backend)
