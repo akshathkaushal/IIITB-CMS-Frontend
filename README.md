@@ -1,4 +1,4 @@
-![Netlify](https://img.shields.io/netlify/7c905f7b-4914-454c-9339-f1cec6bfb4be?label=netlify)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7c905f7b-4914-454c-9339-f1cec6bfb4be/deploy-status)](https://app.netlify.com/sites/iiitbcms/deploys)
 
 # IIITB COMPLAINT MANAGEMENT SYSTEM
 
