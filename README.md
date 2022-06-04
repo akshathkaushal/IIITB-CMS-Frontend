@@ -1,3 +1,5 @@
+![Netlify](https://img.shields.io/netlify/7c905f7b-4914-454c-9339-f1cec6bfb4be?label=netlify)
+
 # IIITB COMPLAINT MANAGEMENT SYSTEM
 
 ## IIITB CMS Frontend
