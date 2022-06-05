@@ -3,6 +3,16 @@
 ![Dockerize](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/dockerize.yml/badge.svg)
 ![Manual deployment](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/deploy.yml/badge.svg)
 
+![Repo Size](https://img.shields.io/github/repo-size/akshathkaushal/IIITB-CMS-Frontend)
+![Commits](https://img.shields.io/github/commit-activity/w/akshathkaushal/IIITB-CMS-Frontend)
+![Last Commit](https://img.shields.io/github/last-commit/akshathkaushal/IIITB-CMS-Frontend/master)
+![Open Issues](https://img.shields.io/github/issues-raw/akshathkaushal/IIITB-CMS-Frontend)
+![Pull Requests](https://img.shields.io/github/issues-pr-raw/akshathkaushal/IIITB-CMS-Frontend)
+
+![Forks](https://img.shields.io/github/forks/akshathkaushal/IIITB-CMS-Frontend?style=social)
+![Stars](https://img.shields.io/github/stars/akshathkaushal/IIITB-CMS-Frontend?style=social)
+![Watchers](https://img.shields.io/github/watchers/akshathkaushal/IIITB-CMS-Frontend?style=social)
+
 # IIITB COMPLAINT MANAGEMENT SYSTEM
 
 ## IIITB CMS Frontend
