@@ -1,5 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7c905f7b-4914-454c-9339-f1cec6bfb4be/deploy-status)](https://app.netlify.com/sites/iiitbcms/deploys)
 
+![Dockerize](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/dockerize.yml/badge.svg)
+![Manual deployment](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/deploy.yml/badge.svg)
+
 # IIITB COMPLAINT MANAGEMENT SYSTEM
 
 ## IIITB CMS Frontend
