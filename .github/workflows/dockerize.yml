@@ -1,4 +1,4 @@
-name: spe-project Frontend
+name: Dockerization
 
 on:
   push:
