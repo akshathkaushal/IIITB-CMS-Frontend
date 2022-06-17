@@ -3,7 +3,7 @@
 ![Dockerize](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/dockerize.yml/badge.svg)
 ![Manual deployment](https://github.com/akshathkaushal/IIITB-CMS-Frontend/actions/workflows/deploy.yml/badge.svg)
 
-![Repo Size](https://img.shields.io/github/repo-size/akshathkaushal/IIITB-CMS-Frontend)
+![Repo Size](https://img.shields.io/github/repo-size/akshathkaushal/IIITB-CMS-Frontend) 
 ![Commits](https://img.shields.io/github/commit-activity/w/akshathkaushal/IIITB-CMS-Frontend)
 ![Last Commit](https://img.shields.io/github/last-commit/akshathkaushal/IIITB-CMS-Frontend/master)
 ![Open Issues](https://img.shields.io/github/issues-raw/akshathkaushal/IIITB-CMS-Frontend)
