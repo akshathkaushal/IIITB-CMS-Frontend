@@ -6,12 +6,23 @@
         <div class="card-header" style="text-align: center"><h4>Login</h4></div>
         <div class="card-body">
           <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="rollNo" class="col-md-4 col-form-label text-md-right">Roll Number</label>
               <div class="col-md-6">
                 <input type="text" id="rollNo" class="form-control" [formControlName]="'rollNo'" name="rollNo" required
                        autofocus>
                 <span *ngIf="!loginForm.get('rollNo').valid && loginForm.get('rollNo').touched">
+                  Please provide a valid roll number.
+                </span>
+              </div>
+            </div> -->
+
+            <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+              <div class="col-md-6">
+                <input type="text" id="email" class="form-control" [formControlName]="'email'" name="email" required
+                       autofocus>
+                <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
                   Please provide a valid roll number.
                 </span>
               </div>

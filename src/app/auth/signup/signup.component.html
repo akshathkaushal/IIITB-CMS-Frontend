@@ -1,3 +1,9 @@
+<!-- text(x : number): void
+  {
+    if (x==0) document.getElementById("mycode").style.display="block";
+    else document.getElementById("mycode").style.display = "none";
+    return;
+  } -->
 <div class="register-section">
     <div class="row justify-content-center">
         <div class="col-md-3"></div>
@@ -7,7 +13,27 @@
                     <h4>Register</h4>
                 </div>
                 <div class="card-body">
+
                     <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right">Choose type of User</label>
+                          <div class="col-md-6">
+                          <div>
+                              <input type="radio" name="radio" value="YES" (click)="toggleDropdown(0)"/>Committee
+                              <input type="radio" name="radio" value="NO" (click)="toggleDropdown(1)" checked/>Student
+                              <!-- <input type="radio" [(ngModel)]="radioValue"  name="radioValue" value="false" />NO -->
+                          </div>
+                          <div id="mycode" *ngIf="radioValue">
+                            <select>
+                              <option value="" selected disabled>Select Committee</option>
+                              <option *ngFor="let comm of Committees" [ngValue]="comm.code"> {{comm.name}}</option>
+                            </select>
+                          </div>
+
+
+                          </div>
+                        </div>
 
                         <div class="form-group row">
                           <label class="col-md-4 col-form-label text-md-right">Name</label>

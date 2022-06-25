@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {SignupRequestPayload} from "./signup-request-payload";
 import {AuthService} from "../shared/auth.service";
 import {Router} from "@angular/router";
+import { NgModule } from '@angular/core';
 import {ToastrModule, ToastrService} from "ngx-toastr";
 
 @Component({
@@ -14,6 +15,14 @@ export class SignupComponent implements OnInit {
 
   signupRequestPayload: SignupRequestPayload | any;
   signupForm: FormGroup | any;
+  radioValue : boolean = false;
+  selectedComm = null;
+  Committees = [
+    { name: 'Sports Committee', code: 'Sports Committee' },
+    { name: 'Food Committee', code: 'Food Committee' },
+    { name: 'Gym Committee', code: 'Gym Committee' },
+
+  ];
 
   constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) {
     this.signupRequestPayload = {
@@ -32,6 +41,13 @@ export class SignupComponent implements OnInit {
       password: new FormControl('', Validators.required)
     });
   }
+
+  toggleDropdown(flag:number)
+  {
+    if (flag == 0) this.radioValue = true;
+    else this.radioValue = false;
+  }
+
 
   signup() {
     this.signupRequestPayload.rollNo = this.signupForm.get('rollNo').value;

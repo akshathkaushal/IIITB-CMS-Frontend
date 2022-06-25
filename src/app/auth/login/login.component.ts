@@ -23,13 +23,15 @@ export class LoginComponent implements OnInit {
               private toastr: ToastrService) {
     this.loginRequestPayload = {
       rollNo: '',
+      // email:'',
       password: ''
     };
   }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      rollNo: new FormControl('', Validators.required),
+      // rollNo: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
 
@@ -43,7 +45,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginRequestPayload.rollNo = this.loginForm.get('rollNo').value;
+    // this.loginRequestPayload.email = this.loginForm.get('rollNo').value;
+    this.loginRequestPayload.email = this.loginForm.get('email').value;
     this.loginRequestPayload.password = this.loginForm.get('password').value;
 
     this.authService.login(this.loginRequestPayload).subscribe(data => {

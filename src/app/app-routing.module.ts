@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: 'create-subpost', component: CreateSubpostComponent, canActivate: [AuthGuard]},
   {path: 'list-subposts', component: ListSubpostsComponent},
   {path: 'view-post/:id', component: ViewPostComponent},
-  {path: 'user-profile/:rollNo', component: UserProfileComponent, canActivate: [AuthGuard]}
+  {path: 'user-profile/:rollNo', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'logout', component: LoginComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
