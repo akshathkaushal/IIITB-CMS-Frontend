@@ -32,10 +32,14 @@ export class AuthService {
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
     return this.httpClient.post<LoginResponse>('http://localhost:8090/token',
       loginRequestPayload).pipe(map(data => {
-      this.localStorage.store('authenticationToken', data.authenticationToken);
+      // this.localStorage.store('authenticationToken', data.authenticationToken);
       this.localStorage.store('rollNo', data.rollNo);
       this.localStorage.store('refreshToken', data.refreshToken);
       this.localStorage.store('expiresAt', data.expiresAt);
+      // this.localStorage.store('role'), data.role);
+      console.log(this.localStorage.retrieve('authenticationToken'));
+      console.log(this.localStorage.retrieve('rollNo'));
+      console.log(this.localStorage.retrieve('refreshToken'));
 
       this.loggedIn.emit(true);
       this.rollNo.emit(data.rollNo);

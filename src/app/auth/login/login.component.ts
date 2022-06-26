@@ -52,7 +52,12 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginRequestPayload).subscribe(data => {
       if(data) {
         this.isError = false;
-        this.router.navigateByUrl('/');
+
+        // if(data.role == 'student') this.router.navigateByUrl('studHome');
+        // else if (data.role == 'committee') this.router.navigateByUrl('commHome');
+        // else console.log("role not recieved");
+
+        this.router.navigateByUrl('studHome');
         this.toastr.success('Login successful');
       } else {
         this.isError = true;
