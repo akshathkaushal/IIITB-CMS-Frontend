@@ -29,6 +29,7 @@ import {TokenInterceptor} from "./token-interceptor";
 import { FormsModule } from '@angular/forms';
 import { StudHomePageComponent } from './home/stud-home-page/stud-home-page.component';
 import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.component';
+import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.comp
     UserProfileComponent,
     StudHomePageComponent,
     CommHomePageComponent,
+    AdminHomePageComponent,
   ],
   imports: [
     BrowserModule,
