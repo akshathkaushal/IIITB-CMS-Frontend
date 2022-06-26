@@ -37,7 +37,7 @@ export class AuthService {
         this.localStorage.store('rollNo', data.rollNo);
         this.localStorage.store('expiresAt', data.expiresAt);
         this.localStorage.store('token', data.token);
-        
+
         this.loggedIn.emit(true);
         this.rollNo.emit(data.rollNo);
         return data;

@@ -20,9 +20,9 @@
                           <label class="col-md-4 col-form-label text-md-right">Choose type of User</label>
                           <div class="col-md-6">
                           <div>
-                              <input type="radio" name="radio" value="YES" (click)="toggleDropdown(0)"/>Committee
-                              <input type="radio" name="radio" value="NO" (click)="toggleDropdown(1)" checked/>Student
-                              <!-- <input type="radio" [(ngModel)]="radioValue"  name="radioValue" value="false" />NO -->
+                              <input type="radio" name="radio" value="Comm" (click)="toggleDropdown(0)"/>Committee
+                              <input type="radio" name="radio" value="Student" (click)="toggleDropdown(1)" checked/>Student
+                              <input type="radio" name="radio" value="Admin" (click)="toggleDropdown(2)"/>Admin
                           </div>
                           <div id="mycode" *ngIf="radioValue">
                             <select>
