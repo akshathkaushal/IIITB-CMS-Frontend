@@ -12,23 +12,23 @@ export class SubpostService {
 
   getAllSubposts() : Observable<Array<SubpostModel>>{
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.get<Array<SubpostModel>>('http://localhost:8090/api/subpost',{headers:header,responseType:'json'});
+    return this.httpClient.get<Array<SubpostModel>>('http://localhost:8080/api/subpost',{headers:header,responseType:'json'});
   }
 
   createSubpost(subpostmodel: SubpostModel) : Observable<SubpostModel> {
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.post<SubpostModel>('http://localhost:8090/api/subpost', subpostmodel,{headers:header,responseType:'json'});
+    return this.httpClient.post<SubpostModel>('http://localhost:8080/api/subpost', subpostmodel,{headers:header,responseType:'json'});
   }
 }

@@ -12,36 +12,36 @@ export class CommentService {
 
   getAllCommentsForPost(postId: number): Observable<any> {
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
 
-    return this.httpClient.get<CommentPayload[]>('http://localhost:8090/api/comments/by-post/' + postId,{headers:header,responseType:'json'});
+    return this.httpClient.get<CommentPayload[]>('http://localhost:8080/api/comments/by-post/' + postId,{headers:header,responseType:'json'});
   }
 
   postComment(commentPayload: CommentPayload): Observable<any> {
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.post<any>('http://localhost:8090/api/comments/', commentPayload,{headers:header,responseType:'json'});
+    return this.httpClient.post<any>('http://localhost:8080/api/comments/', commentPayload,{headers:header,responseType:'json'});
   }
 
   getAllCommentsByUser(rollNo: string) {
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.get<CommentPayload[]>('http://localhost:8090/api/comments/by-user/' + rollNo,{headers:header,responseType:'json'});
+    return this.httpClient.get<CommentPayload[]>('http://localhost:8080/api/comments/by-user/' + rollNo,{headers:header,responseType:'json'});
   }
 
 }

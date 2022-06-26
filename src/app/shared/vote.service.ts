@@ -12,12 +12,12 @@ export class VoteService {
 
   vote(votePayload: VotePayload): Observable<any> {
 
-    let token = localStorage.getItem("authenticationToken");
+    let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.post('http://localhost:8090/api/votes/', votePayload,{headers:header,responseType:'json'});
+    return this.httpClient.post('http://localhost:8080/api/votes/', votePayload,{headers:header,responseType:'json'});
   }
 }

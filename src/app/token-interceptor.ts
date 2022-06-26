@@ -47,9 +47,9 @@ export class TokenInterceptor implements HttpInterceptor {
         switchMap((refreshTokenResponse: LoginResponse) => {
           this.isTokenRefreshing = false;
           this.refreshTokenSubject
-            .next(refreshTokenResponse.authenticationToken);
+            .next(refreshTokenResponse.token);
           return next.handle(this.addToken(req,
-            refreshTokenResponse.authenticationToken));
+            refreshTokenResponse.token));
         })
       )
     } else {
