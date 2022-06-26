@@ -17,7 +17,8 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup | any;
   radioValue : boolean = false;
   selectedRole : String = "null";
-  Committees = [
+  Committees =
+  [
     { name: 'Sports Committee', code: 'Sports Committee' },
     { name: 'Food Committee', code: 'Food Committee' },
     { name: 'Gym Committee', code: 'Gym Committee' },
@@ -42,6 +43,11 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  getDropDown()
+  {
+
+  }
+
   toggleDropdown(flag:number)
   {
     if (flag == 0)
@@ -53,10 +59,6 @@ export class SignupComponent implements OnInit {
     {
       this.radioValue = false;
       this.selectedRole = "student";
-    }
-    else if (flag ==2)
-    {
-      this.selectedRole = "admin";
     }
     else console.log("radio button error");
   }
