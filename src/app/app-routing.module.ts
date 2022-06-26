@@ -9,6 +9,9 @@ import {ListSubpostsComponent} from "./subpost/list-subposts/list-subposts.compo
 import {ViewPostComponent} from "./post/view-post/view-post.component";
 import {UserProfileComponent} from "./auth/user-profile/user-profile.component";
 import {AuthGuard} from "./auth/auth.guard";
+import { StudHomePageComponent } from './home/stud-home-page/stud-home-page.component';
+import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.component';
+import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path: 'list-subposts', component: ListSubpostsComponent},
   {path: 'view-post/:id', component: ViewPostComponent},
   {path: 'user-profile/:rollNo', component: UserProfileComponent, canActivate: [AuthGuard]},
-  {path: 'logout', component: LoginComponent, canActivate: [AuthGuard]}
+  {path: 'logout', component: LoginComponent, canActivate: [AuthGuard]},
+  {path: 'studHome', component: StudHomePageComponent, canActivate: [AuthGuard]},
+  {path: 'commHome', component: CommHomePageComponent, canActivate: [AuthGuard]},
+  {path: 'adminHome', component: AdminHomePageComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
