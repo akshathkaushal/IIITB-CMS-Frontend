@@ -26,7 +26,7 @@
                           <div id="mycode" *ngIf="radioValue">
                             <select>
                               <option value="" selected disabled>Select Committee</option>
-                              <option *ngFor="let comm of Committees" [ngValue]="comm.code"> {{comm.name}}</option>
+                              <option *ngFor="let comm of committees" [ngValue]="comm.description"> {{comm.name}}</option>
                             </select>
                           </div>
 

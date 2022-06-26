@@ -44,6 +44,17 @@ export class AuthService {
     }));
   }
 
+  getDropDown() : Observable<any>
+  {
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+        Authorization : "Bearer " + token
+      }
+   )
+
+    return this.httpClient.get<any>(`http://localhost:8080/api/subpost`);
+  }
   // login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
   //   return this.httpClient.post<LoginResponse>('http://localhost:8080/api/auth/login',
   //     loginRequestPayload).pipe(map(data => {

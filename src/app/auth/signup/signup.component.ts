@@ -17,20 +17,22 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup | any;
   radioValue : boolean = false;
   selectedRole : String = "null";
-  Committees =
-  [
-    { name: 'Sports Committee', code: 'Sports Committee' },
-    { name: 'Food Committee', code: 'Food Committee' },
-    { name: 'Gym Committee', code: 'Gym Committee' },
+  committees: any;
+  // Committees =
+  // [
+  //   { name: 'Sports Committee', code: 'Sports Committee' },
+  //   { name: 'Food Committee', code: 'Food Committee' },
+  //   { name: 'Gym Committee', code: 'Gym Committee' },
 
-  ];
+  // ];
+  // Committees = [];
 
   constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) {
     this.signupRequestPayload = {
       rollNo: '',
       name: '',
       email: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -39,13 +41,16 @@ export class SignupComponent implements OnInit {
       rollNo: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.required),
     });
+    this.getDropDown();
   }
 
   getDropDown()
   {
-
+    this.authService.getDropDown().subscribe(data =>{
+      this.committees = [...data];
+    });
   }
 
   toggleDropdown(flag:number)
