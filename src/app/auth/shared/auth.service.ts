@@ -29,7 +29,7 @@ export class AuthService {
   }
 
 
-  login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
+  login(loginRequestPayload: LoginRequestPayload): Observable<LoginResponse> {
     return this.httpClient.post<LoginResponse>('http://localhost:8080/token',
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('email',data.email);
@@ -40,7 +40,7 @@ export class AuthService {
         
         this.loggedIn.emit(true);
         this.rollNo.emit(data.rollNo);
-        return true;
+        return data;
     }));
   }
 

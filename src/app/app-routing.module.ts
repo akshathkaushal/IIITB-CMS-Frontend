@@ -22,7 +22,6 @@ const routes: Routes = [
   {path: 'list-subposts', component: ListSubpostsComponent},
   {path: 'view-post/:id', component: ViewPostComponent},
   {path: 'user-profile/:rollNo', component: UserProfileComponent, canActivate: [AuthGuard]},
-  {path: 'logout', component: LoginComponent, canActivate: [AuthGuard]},
   {path: 'studHome', component: StudHomePageComponent, canActivate: [AuthGuard]},
   {path: 'commHome', component: CommHomePageComponent, canActivate: [AuthGuard]},
   {path: 'adminHome', component: AdminHomePageComponent, canActivate: [AuthGuard]}
