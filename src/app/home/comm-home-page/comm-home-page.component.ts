@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderComponent } from 'app/header/header.component';
 
 @Component({
   selector: 'app-comm-home-page',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommHomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }

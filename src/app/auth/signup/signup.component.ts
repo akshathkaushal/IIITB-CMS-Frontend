@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
   radioValue : boolean = false;
   selectedRole : String = "null";
   committees: any;
+  select : any;
   // Committees =
   // [
   //   { name: 'Sports Committee', code: 'Sports Committee' },
@@ -68,13 +69,30 @@ export class SignupComponent implements OnInit {
     else console.log("radio button error");
   }
 
+  tester()
+  {
+    this.select = document.getElementById('select')
+    this.signupRequestPayload.rollNo = "Committee"
+    this.signupRequestPayload.name = this.select.value;
+    console.log(this.select.value);
+  }
+
 
   signup() {
-    this.signupRequestPayload.rollNo = this.signupForm.get('rollNo').value;
-    this.signupRequestPayload.name = this.signupForm.get('name').value;
+
+    if(this.radioValue==true)//committee
+    {
+      this.tester();
+    }
+    else
+    {
+      this.signupRequestPayload.rollNo = this.signupForm.get('rollNo').value;
+      this.signupRequestPayload.name = this.signupForm.get('name').value;
+    }
     this.signupRequestPayload.email = this.signupForm.get('email').value;
     this.signupRequestPayload.password = this.signupForm.get('password').value;
     this.signupRequestPayload.role = this.selectedRole;
+
 
     this.authService.signup(this.signupRequestPayload)
       .subscribe( () => {

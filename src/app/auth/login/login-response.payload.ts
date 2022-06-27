@@ -4,4 +4,5 @@ export interface LoginResponse {
   expiresAt: Date;
   rollNo: string;
   role : string;
+  name : string;
 }

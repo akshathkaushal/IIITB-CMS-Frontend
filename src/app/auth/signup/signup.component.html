@@ -14,17 +14,19 @@
                 </div>
                 <div class="card-body">
 
+                  <button (click)="tester()">CLICK ME</button>
+
                     <form [formGroup]="signupForm" (ngSubmit)="signup()">
 
                         <div class="form-group row">
                           <label class="col-md-4 col-form-label text-md-right">Choose type of User</label>
                           <div class="col-md-6">
                           <div>
-                              <input type="radio" name="radio" value="Comm" (click)="toggleDropdown(0)"/>Committee
-                              <input type="radio" name="radio" value="Student" (click)="toggleDropdown(1)" checked/>Student
+                              <input id= "radios" type="radio" name="radio" value="Comm" (click)="toggleDropdown(0)"/>Committee
+                              <input id = "radios" type="radio" name="radio" value="Student" (click)="toggleDropdown(1)" checked/>Student
                           </div>
                           <div id="mycode" *ngIf="radioValue">
-                            <select>
+                            <select id="select">
                               <option value="" selected disabled>Select Committee</option>
                               <option *ngFor="let comm of committees" [ngValue]="comm.description"> {{comm.name}}</option>
                             </select>
@@ -34,7 +36,7 @@
                           </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row" *ngIf="!radioValue">
                           <label class="col-md-4 col-form-label text-md-right">Name</label>
                           <div class="col-md-6">
                             <input type="text" [formControlName]="'name'" id="name" class="form-control" required autofocus>
@@ -42,7 +44,7 @@
                           </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row" *ngIf="!radioValue">
                           <label for="rollNo" class="col-md-4 col-form-label text-md-right">Roll Number</label>
                           <div class="col-md-6">
                             <input type="text" [formControlName]="'rollNo'" id="rollNo" class="form-control" name="roll-no" required

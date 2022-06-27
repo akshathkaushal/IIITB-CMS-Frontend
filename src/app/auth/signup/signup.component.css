@@ -20,3 +20,15 @@
     padding: 3px 16px;
     opacity: 1;
   }
+
+  #radios
+  {
+    margin-right:2%;
+    margin-left:1%;
+  }
+
+  #mycode
+  {
+    margin-top:2%;
+    margin-bottom:2%;
+  }

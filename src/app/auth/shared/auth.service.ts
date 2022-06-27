@@ -37,7 +37,9 @@ export class AuthService {
         this.localStorage.store('rollNo', data.rollNo);
         this.localStorage.store('expiresAt', data.expiresAt);
         this.localStorage.store('token', data.token);
-
+        console.log("name is ", data.name);
+        this.localStorage.store('name',data.name);
+        console.log(this.localStorage.retrieve('name'));
         this.loggedIn.emit(true);
         this.rollNo.emit(data.rollNo);
         return data;
@@ -112,6 +114,16 @@ export class AuthService {
 
   getRollNo() {
     return this.localStorage.retrieve('rollNo');
+  }
+
+  getRole()
+  {
+    return this.localStorage.retrieve('role');
+  }
+
+  getName()
+  {
+    return this.localStorage.retrieve('name');
   }
   getRefreshToken() {
     return this.localStorage.retrieve('refreshToken');
