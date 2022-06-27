@@ -14,14 +14,14 @@ export class HeaderComponent implements OnInit {
   rollNo: string;
   isLoggedIn: boolean;
   name : string;
-  temp : string;
+  role : string;
   display : string;
 
   constructor(private authService: AuthService, private router: Router) {
     this.rollNo = "",
     this.isLoggedIn = false,
     this.name ="",
-    this.temp = this.authService.getRole(),
+    this.role = this.authService.getRole(),
     this.display =""
   }
 
@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.name = this.authService.getName();
     this.rollNo = this.authService.getRollNo();
+    console.log("NGONINIT CALLED")
     this.refreshNavbar();
   }
 
@@ -41,17 +42,17 @@ export class HeaderComponent implements OnInit {
   refreshNavbar()
   {
     console.log("this is header ")
-    if(this.temp == 'student')
+    if(this.role == 'student')
     {
       this.display = this.authService.getRollNo();
       console.log(this.display);
     }
-    else if(this.temp == 'committee')
+    else if(this.role == 'committee')
     {
       this.display = this.authService.getName();
       console.log(this.display);
     }
-    else if (this.temp == 'admin')
+    else if (this.role == 'admin')
     {
       this.display = 'admin';
       console.log(this.display);
