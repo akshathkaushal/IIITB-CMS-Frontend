@@ -121,6 +121,15 @@ h1 {
   display: inline;
 }
 
+.overflow
+{
+  display: inline-block;
+  max-width: 100ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 
 
 

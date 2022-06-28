@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         this.isError = false;
         console.log("data received from login response is " , data);
         this.roles.emit(data.role);
-        if(data.role == 'student') this.router.navigateByUrl('');
+        if(data.role == 'student') this.router.navigateByUrl('student');
         else if (data.role == 'committee') this.router.navigateByUrl('');
         else if (data.role == 'admin') this.router.navigateByUrl('adminHome');
         else console.log("role not received");

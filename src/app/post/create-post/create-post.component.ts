@@ -52,7 +52,7 @@ export class CreatePostComponent implements OnInit {
     this.postPayload.email = this.localStorage.retrieve('email');
     console.log(this.postPayload.subpostName);
     this.postService.createPost(this.postPayload).subscribe((data) => {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('student');
     }, error => {
       console.log("Error creating post")
       throwError(error);

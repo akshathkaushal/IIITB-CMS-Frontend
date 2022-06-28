@@ -16,7 +16,7 @@
             <option *ngFor="let subpost of subposts">{{subpost.name}}</option>
           </select>
 
-          <editor [formControlName]="'description'" [init]="{
+          <!-- <editor [formControlName]="'description'" [init]="{
                       height: 500,
                       menubar: false,
                       plugins: [
@@ -26,7 +26,16 @@
                       ],
                       toolbar:
                         'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-                    }"></editor>
+                    }"></editor> -->
+
+                    <div class="container box">
+                      <div class="container inside">
+                        <div class="left">
+                          <textarea class="comment" type="text" placeholder="Description ..."[formControlName]="'description'"></textarea>
+            
+                        </div>
+                      </div>
+                    </div>
           <span>
             <div style="margin-top: 5px" class="float-right">
               <button (click)="discardPost()" class="btnDiscard">Discard</button>

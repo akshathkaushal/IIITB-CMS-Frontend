@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostModel } from 'app/shared/post-model';
+import { PostService } from 'app/shared/post.service';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-stud-home-page',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudHomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostService,private localStorage:LocalStorageService) { }
 
-  ngOnInit(): void {
+  posts: PostModel[] | any;
+  name : string = ""
+  async ngOnInit(): Promise<void> 
+  {
+    const res : any = await this.postService.getAllPosts().toPromise();
+    this.posts = res;
+    this.name = this.localStorage.retrieve('name');
+    console.log(this.posts);
   }
 
 }

@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   name : string;
   role : string;
   display : string;
+  navigate:string = "";
 
   constructor(private authService: AuthService, private router: Router,private localStorage: LocalStorageService) {
     this.rollNo = "",
@@ -54,16 +55,21 @@ export class HeaderComponent implements OnInit {
     {
       this.display = this.authService.getRollNo();
       console.log(this.display);
+      this.navigate = "studHome";
     }
     else if(this.role == 'committee')
     {
       this.display = this.authService.getName();
       console.log(this.display);
+      this.navigate = "commHome";
+
     }
     else if (this.role == 'admin')
     {
       this.display = 'admin';
       console.log(this.display);
+      this.navigate = "adminHome";
+
     }
   }
 

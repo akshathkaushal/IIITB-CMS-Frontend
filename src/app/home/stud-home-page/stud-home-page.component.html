@@ -1,1 +1,99 @@
-<p>stud-home-page works!</p>
+<body ng-app="blogApp">
+
+    <div ng-controller="BlogController as blog">
+      <div class="topbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-s-4">
+              <h1 ng-click="blog.selectTab('blog')" class="push-left">IIITB-CMS Home</h1>
+            </div>
+            <div class="offset-s-4 col-s-4">
+              <nav role='navigation' class="push-right">
+                <ul>
+                  <li><a href="#" ng-click="blog.selectTab('blog')">See All Posts</a></li> //
+                  <li><a href="create-post" ng-click="blog.selectTab('new')">Add New Post</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div *ngFor="let post of posts">
+            <ul class="post-grid" ng-show="blog.isSelected('blog')">
+              <li ng-repeat="post in blog.posts" class="col-s-4" ng-click="blog.selectTab($index)">
+                <h3>{{post.postName}}</h3>
+                <p class="overflow" [innerHTML]="post.description">{{post.description}}...</p>
+                <p class=""> 
+                    <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/20/000000/external-like-instagram-flatart-icons-outline-flatarticons.png"/>
+                    {{post.voteCount}}
+                </p>
+                <cite class="bold">by {{name}} <p class="bold">posted on {{post.localDateTime.substring(0,10)}} at
+                    {{post.localDateTime.substring(11,19)}} </p>
+                </cite>
+              </li>
+            </ul>
+        
+            <div class="post" ng-repeat="post in blog.posts" ng-show="blog.isSelected($index)">
+              <!-- <div>
+  
+                <h2>{{post.postName}}</h2>
+                <cite class="bold">by {{name}} <p class="bold">posted on {{post.localDateTime.substring(0,10)}} at
+                    {{post.localDateTime.substring(11,19)}} </p>
+                </cite>
+                <div class="post-body">
+                  <p ng-repeat="paragraph in post.body" [innerHTML]="post.description">
+                    {{post.description}}
+                  </p>
+                </div>
+            </div> -->
+                <!-- <div class="comments" ng-controller="CommentController as commentCtrl">
+                  <button class="fa fa-heart" ng-click="post.likes = post.likes+1"> {{post.likes}}</button>
+                  <h3>Comments</h3>
+                  <ul>
+                    <li ng-repeat="comment in post.comments">
+                      "{{comment.body}}"
+                      <cite>- <b>{{comment.author}}</b></cite>
+                    </li>
+                  </ul>
+                  <form name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+  
+                    <h4>Add Comment</h4>
+                    <textarea ng-model="commentCtrl.comment.body" cols="30" rows="10" required></textarea>
+                    <label for="">by:</label>
+                    <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name" />
+  
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div> -->
+              </div>
+            </div>
+            <!-- <div class="post" ng-show="blog.isSelected('new')">
+              <h2>Add New Post</h2>
+  
+              <form name="postForm" ng-submit=" blog.addPost()" novalidate>
+                <h4>Title</h4>
+                <input type="text" ng-model="blog.post.title" />
+                <h4>Body</h4>
+                <textarea ng-model="blog.post.body" ng-list="/\n/" rows="10"></textarea>
+                <label for="">Featured Image URL</label>
+                <input type="text" ng-model="blog.post.image" placeholder="http://placekitten.com/g/2000/600" />
+                <label for="">by:</label>
+                <input type="text" ng-model="blog.post.author" placeholder="Author Name" required />
+  
+                <input type="submit" value="Submit" />
+              </form>
+  
+            </div> -->
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </body>
