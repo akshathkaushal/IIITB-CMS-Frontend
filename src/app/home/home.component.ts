@@ -11,11 +11,14 @@ export class HomeComponent implements OnInit {
 
   posts: Array<PostModel> = [];
 
-  constructor() {
+  constructor(private postService: PostService) {
   }
 
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> 
+  {
+    const res : any = await this.postService.getAllPosts().toPromise();
+    this.posts = res;
   }
 
 }

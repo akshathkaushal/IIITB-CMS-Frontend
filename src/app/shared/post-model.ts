@@ -10,4 +10,5 @@ export class PostModel {
   duration: string | any;
   upVote: boolean | any;
   downVote: boolean | any;
+  localDateTime!: string;
 }

@@ -33,7 +33,7 @@ export class CommentService {
     return this.httpClient.post<any>('http://localhost:8080/api/comments/', commentPayload,{headers:header,responseType:'json'});
   }
 
-  getAllCommentsByUser(rollNo: string) {
+  getAllCommentsByUser(email: string) {
 
     let token = localStorage.getItem("token");
     let header = new HttpHeaders(
@@ -41,7 +41,7 @@ export class CommentService {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.get<CommentPayload[]>('http://localhost:8080/api/comments/by-user/' + rollNo,{headers:header,responseType:'json'});
+    return this.httpClient.get<CommentPayload[]>('http://localhost:8080/api/comments/by-user/' + email,{headers:header,responseType:'json'});
   }
 
 }

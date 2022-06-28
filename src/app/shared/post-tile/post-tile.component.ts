@@ -12,15 +12,18 @@ import {Router} from "@angular/router";
 export class PostTileComponent implements OnInit {
 
   faComments = faComments;
-  @Input() posts: PostModel[] | any;
+  posts: PostModel[] | any;
 
   constructor(private postService: PostService, private router: Router) {
     this.postService.getAllPosts().subscribe(post => {
-      this.posts = post;
+      // this.posts = post;
+      console.log("posts are ", this.posts)
     });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const res : any = await this.postService.getAllPosts().toPromise();
+    this.posts = res;
   }
 
   goToPost(id: number): void {

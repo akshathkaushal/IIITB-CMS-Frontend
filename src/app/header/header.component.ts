@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import {AuthService} from "../auth/shared/auth.service";
 import {Router} from "@angular/router";
 import { faUser} from "@fortawesome/free-solid-svg-icons";
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { faUser} from "@fortawesome/free-solid-svg-icons";
 })
 export class HeaderComponent implements OnInit {
 
+   
   faUser = faUser;
   rollNo: string;
   isLoggedIn: boolean;
@@ -17,31 +19,37 @@ export class HeaderComponent implements OnInit {
   role : string;
   display : string;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router,private localStorage: LocalStorageService) {
     this.rollNo = "",
     this.isLoggedIn = false,
     this.name ="",
-    this.role = this.authService.getRole(),
+    this.role = this.localStorage.retrieve("role"),
     this.display =""
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.role = this.localStorage.retrieve("role")
+
     this.authService.loggedIn.subscribe((data:boolean) => this.isLoggedIn = data);
     this.authService.rollNo.subscribe((data:string) => this.rollNo = data);
     this.isLoggedIn = this.authService.isLoggedIn();
     this.name = this.authService.getName();
-    this.rollNo = this.authService.getRollNo();
-    console.log("NGONINIT CALLED")
+    // this.role = this.localStorage.retrieve("role")
+    // this.role = await this.authService.getRole().toPromise();
+    // this.rollNo = this.authService.getRollNo();
+    console.log(this.rollNo);
     this.refreshNavbar();
+
   }
 
   goToUserProfile() {
-    this.router.navigateByUrl("/user-profile/" + this.rollNo);
+    this.router.navigateByUrl("profile" + this.rollNo);
   }
 
   refreshNavbar()
   {
-    console.log("this is header ")
+    // this.role = this.localStorage.retrieve("role")
+    console.log("this is header ",this.role)
     if(this.role == 'student')
     {
       this.display = this.authService.getRollNo();

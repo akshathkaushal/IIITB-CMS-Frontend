@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginRequestPayload} from "./login.request.payload";
 import {AuthService} from "../shared/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Toast, ToastrService} from "ngx-toastr";
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,10 @@ import {Toast, ToastrService} from "ngx-toastr";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  @Output() roles = new EventEmitter();
+
+
 
   loginForm: FormGroup | any;
   loginRequestPayload: LoginRequestPayload | any;
@@ -44,25 +49,28 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login() {
+  login():Observable<any> {
     // this.loginRequestPayload.email = this.loginForm.get('rollNo').value;
     this.loginRequestPayload.email = this.loginForm.get('email').value;
     this.loginRequestPayload.password = this.loginForm.get('password').value;
-
-    this.authService.login(this.loginRequestPayload).subscribe((data: any) => {
+    // const res = await this.authService.login(this.loginRequestPayload).toPromise();
+    this.authService.login(this.loginRequestPayload).subscribe((data: any) => 
+    {
       if(data) {
         this.isError = false;
         console.log("data received from login response is " , data);
-        if(data.role == 'student') this.router.navigateByUrl('studHome');
-        else if (data.role == 'committee') this.router.navigateByUrl('commHome');
+        this.roles.emit(data.role);
+        if(data.role == 'student') this.router.navigateByUrl('');
+        else if (data.role == 'committee') this.router.navigateByUrl('');
         else if (data.role == 'admin') this.router.navigateByUrl('adminHome');
         else console.log("role not received");
 
         // this.router.navigateByUrl('studHome');
-        this.toastr.success('Login successful');
+        // this.toastr.success('Login successful');
       } else {
         this.isError = true;
       }
     });
+    return of(null);
   }
 }

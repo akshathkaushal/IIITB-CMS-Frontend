@@ -3,4 +3,5 @@ export class CreatePostPayload {
   subpostName?: string;
   url?: string;
   description: string | any;
+  email:string = "";
 }

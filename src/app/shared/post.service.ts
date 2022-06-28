@@ -29,6 +29,7 @@ export class PostService {
         Authorization : "Bearer " + token
       }
    )
+    console.log("post is ",postPayload);
     return this.httpClient.post('http://localhost:8080/api/posts/', postPayload,{headers:header,responseType:'json'});
   }
 
@@ -42,14 +43,14 @@ export class PostService {
     return this.httpClient.get<PostModel>('http://localhost:8080/api/posts/'+id,{headers:header,responseType:'json'});
   }
 
-  getAllPostsByUser(rollNo: string) : Observable<PostModel[]> {
+  getAllPostsByUser(email: string) : Observable<PostModel[]> {
     let token = localStorage.getItem("token");
     let header = new HttpHeaders(
       {
         Authorization : "Bearer " + token
       }
    )
-    return this.httpClient.get<PostModel[]>('http://localhost:8080/api/posts/by-user/' + rollNo,{headers:header,responseType:'json'});
+    return this.httpClient.get<PostModel[]>('http://localhost:8080/api/posts/by-user/' + email,{headers:header,responseType:'json'});
   }
 
 }

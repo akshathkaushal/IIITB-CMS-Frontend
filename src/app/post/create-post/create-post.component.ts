@@ -6,6 +6,7 @@ import {PostService} from "../../shared/post.service";
 import {SubpostService} from "../../subpost/subpost.service";
 import {CreatePostPayload} from "./create-post.payload";
 import {throwError} from "rxjs";
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-create-post',
@@ -18,12 +19,14 @@ export class CreatePostComponent implements OnInit {
   postPayload: CreatePostPayload;
   subposts: Array<SubpostModel> | any;
 
-  constructor(private router: Router, private postService: PostService, private subpostService: SubpostService) {
+  constructor(private router: Router, private postService: PostService, private subpostService: SubpostService,
+    private localStorage: LocalStorageService) {
     this.postPayload = {
       description: '',
       postName: '',
       subpostName: '',
-      url: ''
+      url: '',
+      email: ''
     }
   }
 
@@ -46,7 +49,8 @@ export class CreatePostComponent implements OnInit {
     this.postPayload.subpostName = this.createPostForm.get('subpostName').value;
     this.postPayload.url = this.createPostForm.get('url').value;
     this.postPayload.description = this.createPostForm.get('description').value;
-
+    this.postPayload.email = this.localStorage.retrieve('email');
+    console.log(this.postPayload.subpostName);
     this.postService.createPost(this.postPayload).subscribe((data) => {
       this.router.navigateByUrl('/');
     }, error => {
