@@ -4,6 +4,7 @@ import {CommentPayload} from "../../comment/comment.payload";
 import {ActivatedRoute} from "@angular/router";
 import {PostService} from "../../shared/post.service";
 import {CommentService} from "../../comment/comment.service";
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,27 +13,35 @@ import {CommentService} from "../../comment/comment.service";
 })
 export class UserProfileComponent implements OnInit {
 
-  rollNo: string;
-  posts: PostModel[] | any;
+  // rollNo: string;
+  name:string;
+  email : string;
+  posts: PostModel[] = [] 
   comments: CommentPayload[] | any;
   postLength: number | any;
   commentLength: number | any;
+  dataLoaded: boolean =false;
 
-  constructor(private activatedRoute: ActivatedRoute, private postService: PostService,
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService, private localStorage: LocalStorageService,
               private commentService: CommentService) {
-    this.rollNo = this.activatedRoute.snapshot.params['rollNo'];
-
-    this.postService.getAllPostsByUser(this.rollNo).subscribe(data => {
-      this.posts = data;
-      this.postLength = data.length;
-    });
-    this.commentService.getAllCommentsByUser(this.rollNo).subscribe(data => {
+    // this.rollNo = this.activatedRoute.snapshot.params['rollNo'];
+    this.email = this.localStorage.retrieve('email');
+    this.name = this.localStorage.retrieve('name');
+    
+    this.commentService.getAllCommentsByUser(this.email).subscribe(data => {
       this.comments = data;
       this.commentLength = data.length;
     });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+
+    const res : any = await this.postService.getAllPostsByUser(this.email).toPromise();
+    
+      this.posts = res;
+      this.postLength = res.length;
+      console.log("user data is ", this.posts);
+      this.dataLoaded = true;
   }
 
 }
