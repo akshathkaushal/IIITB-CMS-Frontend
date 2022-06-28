@@ -18,6 +18,7 @@ export class CreatePostComponent implements OnInit {
   createPostForm: FormGroup | any;
   postPayload: CreatePostPayload;
   subposts: Array<SubpostModel> | any;
+  navigate : string = "";
 
   constructor(private router: Router, private postService: PostService, private subpostService: SubpostService,
     private localStorage: LocalStorageService) {
@@ -51,8 +52,10 @@ export class CreatePostComponent implements OnInit {
     this.postPayload.description = this.createPostForm.get('description').value;
     this.postPayload.email = this.localStorage.retrieve('email');
     console.log(this.postPayload.subpostName);
-    this.postService.createPost(this.postPayload).subscribe((data) => {
-      this.router.navigateByUrl('student');
+    this.postService.createPost(this.postPayload).subscribe((data) => 
+    {
+      this.navigateTo();
+      
     }, error => {
       console.log("Error creating post")
       throwError(error);
@@ -62,7 +65,27 @@ export class CreatePostComponent implements OnInit {
 
 
   discardPost() {
-    this.router.navigateByUrl('/');
+    this.navigateTo();
+  }
+
+  navigateTo()
+  {
+    var role = this.localStorage.retrieve("role")
+    console.log("this is header ",role)
+    if(role == 'student')
+    {
+      this.navigate = "studHome";
+    }
+    else if(role == 'committee')
+    {
+      this.navigate = "commHome";
+
+    }
+    else if (role == 'admin')
+    {
+      this.navigate = "adminHome";
+    }
+    this.router.navigateByUrl(role);
   }
 
 }
