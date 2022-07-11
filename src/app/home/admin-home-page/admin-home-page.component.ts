@@ -40,6 +40,8 @@ export class AdminHomePageComponent implements OnInit {
     const res : any = await this.subpostService.createSubpost(this.subpost).toPromise();
     this.addTopicFormDisplay = false;
     console.log("topic added");
+    this.subpost.description = "";
+    this.subpost.name = "";
     this.ngOnInit();
   }
 

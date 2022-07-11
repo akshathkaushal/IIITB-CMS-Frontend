@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { StudHomePageComponent } from './home/stud-home-page/stud-home-page.component';
 import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.component';
 import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.c
     StudHomePageComponent,
     CommHomePageComponent,
     AdminHomePageComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

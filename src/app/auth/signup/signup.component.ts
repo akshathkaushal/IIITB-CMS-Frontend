@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   signupRequestPayload: SignupRequestPayload | any;
   signupForm: FormGroup | any;
   radioValue : boolean = false;
-  selectedRole : String = "null";
+  selectedRole : String = "student";
   committees: any;
   select : any;
   // Committees =
@@ -92,7 +92,6 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayload.email = this.signupForm.get('email').value;
     this.signupRequestPayload.password = this.signupForm.get('password').value;
     this.signupRequestPayload.role = this.selectedRole;
-
 
     this.authService.signup(this.signupRequestPayload)
       .subscribe( () => {

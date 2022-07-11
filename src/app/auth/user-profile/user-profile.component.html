@@ -5,38 +5,7 @@
     You can check your post and comment history below.
   </div>
   <hr />
-  <div>
-    Your Posts:
-  </div>
-  <!-- <app-post-tile [posts]="posts"></app-post-tile> -->
-  
-  <div *ngFor="let post of posts">
-  
-  <span class="subpost-info">
-    
-    <span class="subpost-text"><a class="posturl" >{{post.subpostName}}</a></span>
-    <a href=""> {{post.postName}} </a>
-    <span> . Posted by <a >{{post.rollNo}}</a></span>
-    <span [innerHTML]="post.description" class="overflow"> {{post.description}}</span>
-  </span>
-</div>
-  <hr />
-  <div>
-    Your Comments:
-  </div>
-  <div *ngFor="let comment of comments">
-    <div class="comment">
-      <div class="rollNo">
-        <a routerLink="/user/comment.rollNo">{{comment.rollNo}}</a>
-      </div>
-      <div>
-        <p>{{comment.duration}}</p>
-      </div>
-      <b>{{comment.text}}</b>
-    </div>
-    <hr />
-  </div>
-</div>
+
 
 
 
@@ -62,13 +31,14 @@
   <h1>User Activity</h1>
   <div class="main-container">
       <div class="card purple border" *ngFor="let post of posts;index as i">
-          
+        <a type="button" (click)="viewPost(post.postId)" class="desc" style="text-decoration: none; color:black;">
           <h2>{{post.postName}}</h2>
-          <p> <span [innerHTML]="post.description"  class="overflow"> {{post.description}}</span></p> <br> 
+        </a>
+          <p> <span [innerHTML]="post.description"  class="overflow"> {{post.description}}..</span></p> <br> 
           <p class="bold">posted on {{post.localDateTime.substring(0,10)}} at
             {{post.localDateTime.substring(11,19)}}
           </p>
-      
+        
       </div>
 
       <!-- <div class="card yellow">

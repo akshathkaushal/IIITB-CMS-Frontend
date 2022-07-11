@@ -6,14 +6,15 @@ import {HomeComponent} from "./home/home.component";
 import {CreatePostComponent} from "./post/create-post/create-post.component";
 import {CreateSubpostComponent} from "./subpost/create-subpost/create-subpost.component";
 import {ListSubpostsComponent} from "./subpost/list-subposts/list-subposts.component";
-import {ViewPostComponent} from "./post/view-post/view-post.component";
+// import {ViewPostComponent} from "./post/view-post/view-post.component";
 import {UserProfileComponent} from "./auth/user-profile/user-profile.component";
 import {AuthGuard} from "./auth/auth.guard";
 import { StudHomePageComponent } from './home/stud-home-page/stud-home-page.component';
 import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.component';
 import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.component';
 import { PostTileComponent } from './shared/post-tile/post-tile.component';
-// PostTileComponent
+import { ViewPostComponent } from './view-post/view-post.component';
+// PostTileComponent ViewPostComponent
 const routes: Routes = [
   // {path: '', component: HomeComponent},
   {path: 'student', component: StudHomePageComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'studHome', component: StudHomePageComponent, canActivate: [AuthGuard]},
   {path: 'commHome', component: CommHomePageComponent, canActivate: [AuthGuard]},
-  {path: 'adminHome', component: AdminHomePageComponent, canActivate: [AuthGuard]}
+  {path: 'adminHome', component: AdminHomePageComponent, canActivate: [AuthGuard]},
+  {path: 'view-post', component: ViewPostComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

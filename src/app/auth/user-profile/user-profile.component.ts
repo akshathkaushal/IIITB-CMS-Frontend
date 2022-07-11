@@ -44,4 +44,10 @@ export class UserProfileComponent implements OnInit {
       this.dataLoaded = true;
   }
 
+  viewPost(postId:string)
+  {
+    this.localStorage.store('postId',postId);
+    window.location.href = "view-post";
+  }
+
 }

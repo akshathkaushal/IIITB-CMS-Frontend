@@ -1,0 +1,151 @@
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img
+           class="rounded-pill img-fluid"
+           width="95"
+           src="https://www.iiitb.ac.in/includefiles/userfiles/images/IIITB-invert-logo.png"
+           alt="">
+      <div class="ms-2">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="home">{{display}}</a>
+        </h5>
+      <p class="mt-1 mb-0">Your Dashboard</p>
+
+      </div>
+    </div>
+  
+  
+    <ul class="categories list-unstyled">
+      <li class="uil-folder">
+        <i class="uil-estate fa-fw"></i><a href="{{navigate}}"> Home</a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="random"> Committees</a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="profile"> Profile</a>
+      </li>
+      <li class="has-dropdown">
+        <i class="uil-calendar-alt"></i><a href="#"> Committees</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <!-- <li class="has-dropdown">
+        <i class="uil-envelope-download fa-fw"></i><a href="#"> Mailbox</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <i class="uil-shopping-cart-alt"></i><a href="#"> Ecommerce</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <i class="uil-bag"></i><a href="#"> Projects</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <i class="uil-setting"></i><a href="#"> Settings</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <i class="uil-chart-pie-alt"></i><a href="#"> Components</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <i class="uil-panel-add"></i><a href="#"> Charts</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">ipsum dolor</a></li>
+          <li><a href="#">dolor ipsum</a></li>
+          <li><a href="#">amet consectetur</a></li>
+          <li><a href="#">ipsum dolor sit</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <i class="uil-map-marker"></i><a href="#"> Maps</a>
+      </li> -->
+    </ul>
+  </aside>
+  
+  <section id="wrapper">
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid mx-2">
+        <!-- <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="uil-bars text-white"></i>
+          </button>
+          <a class="navbar-brand" href="#">admin<span class="main-color">kit</span></a>
+        </div> -->
+        <div class="collapse navbar-collapse" id="toggle-navbar">
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="profile"> Profile
+                <img src="https://img.icons8.com/ios-glyphs/30/26e07f/user-male-circle.png"/>
+                <i class="uil-bell"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" (click)="logout()">Logout
+                <img src="https://img.icons8.com/external-tal-revivo-green-tal-revivo/30/000000/external-online-account-logout-with-arrow-direction-mark-login-green-tal-revivo.png"/>
+                <i class="uil-comments-alt"></i>
+              </a>
+            </li>
+            <!-- <div class="vl"></div> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">fasdfs
+                <i data-show="show-side-navigation1" class="uil-bars show-side-btn"></i>
+              </a>
+            </li> -->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- <div class="p-4">
+      <div class="welcome">
+        <div class="content rounded-3 p-3">
+          <h1 class="fs-3">Welcome to Dashboard</h1>
+          <p class="mb-0">Hello Jone Doe, welcome to your awesome dashboard!</p>
+        </div>
+      </div>
+    </div> -->
+    
+  </section>
+  
