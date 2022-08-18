@@ -1,44 +1,4 @@
-
-<div class="post">
-    <div>
-      
-      <h2>{{post.postName}}</h2>
-      <!-- <img src="{{post.image}}" ng-show="{{post.image}}"/> -->
-      <cite>by {{post.userName}} on {{post.localDateTime }}</cite>
-      <div class="post-body">
-       <p ng-repeat="paragraph in post.body">
-         {{post.description}}
-       </p> 
-      </div>
-      
-      <div class="comments" ng-controller="CommentController as commentCtrl">
-        <button class="fa fa-heart" ng-click="post.voteCount = post.voteCount+1"> {{post.voteCount}}</button>
-        <h3>Comments</h3>
-        <!-- <ul>
-         <li ng-repeat="comment in post.comments">
-           "{{comment.body}}"
-           <cite>- <b>{{comment.author}}</b></cite>
-         </li>
-        </ul> -->
-        <form name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
-        
-          
-          <h4>Add Comment</h4>
-            <textarea ng-model="commentCtrl.comment.body" cols="30" rows="10" required></textarea>
-          <label for="">by:</label>
-            <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name"/>
-            
-            <input type="submit" value="Submit" />
-          </form>
-      </div>
-  </div>
-</div>
-
-
 <!--  -->
-
-
-
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Yellowtail" rel="stylesheet"/>
 <div class="container box">
@@ -51,7 +11,8 @@
     </p> 
    </div>
   <div class="container buttons">
-    <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/>
+    <a href="view-post">
+    <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/></a>
     {{post.voteCount}}
     <img src="https://img.icons8.com/material-outlined/24/000000/comments--v1.png"/>
     {{post.commentCount}}
@@ -67,8 +28,11 @@
   </div>
   <div class="container inside">
     <div class="left">
-      <input class="comment" type="text" placeholder="Write a comment..."/>
-      <button class="button insert" type="button">Insert a comment</button>
+      <!-- <textarea class="comment" [(ngModel)]="comment.text" type="text" placeholder="Write a comment..." ></textarea> -->
+      <!-- <input class="comment" [(ngModel)]="comment.text" type="text" placeholder="Write a comment..." /> -->
+      {{comment.text}}
+
+      <button class="button insert" type="button" [disabled]="!comment.text" (click)="onSubmitComment(comment)">Insert a comment</button>
     </div>
     
   </div>
@@ -81,81 +45,3 @@
 
 
 <!--  -->
-<section id="comment-sec">
-
-  <div class="comment-box c-box1 mt-30">
-    <h1>Comment on the Post</h1>
-    <div class="main-content">
-      <div class="comments flex space-between items-center ">
-        <div class="c1 ">
-          <div class="profile flex items-center">
-            <img src="https://www.pngkey.com/png/full/590-5904853_glen-circle-profile-fundraising.png" class="user-pic">
-            <div class="user-name">
-              <h3>Daniel Herper</h3>
-              <span>Mar 22, 2018</span>
-
-            </div>
-
-          </div>
-
-        </div>
-        <div class="reply">
-          <a href="#">Reply</a>
-        </div>
-
-      </div>
-      <p class="c-text">Brisket picanha shoulder short ribs turducken ball tip. Drumstick pig venison tongue cupim filet mignon shankle shoulder chuck sausage tenderloin.</p>
-
-    </div>
-
-
-  </div>
-  <div class="comment-box c-box2 cb2">
-    <div class="main-content">
-    <div class="comments flex space-between items-center ">
-        <div class="c1 ">
-          <div class="profile flex items-center">
-            <img src="https://www.pngkit.com/png/full/639-6399637_henry-circle-gentleman.png" class="user-pic">
-            <div class="user-name">
-              <h3>Nettie Stokes</h3>
-              <span>Mar 22, 2018</span>
-
-            </div>
-
-          </div>
-
-        </div>
-        <div class="reply">
-          <a href="#">Reply</a>
-        </div>
-
-      </div>
-      <p class="c-text">Meatball boudin sirloin turkey tri-tip frankfurter pork loin shank. Shoulder ground round pancetta, pork short loin hamburger filet mignon.</p>	
-          </div>
-
-    
-    
-    
-
-    
-
-
-
-      <div class="comment-form mb-30">
-     <h1>Leave a Comment</h1>
-
-      <!-- <div class="form">
-        <div class="name"><input type="text"  name="" placeholder="your name"></div>
-        <div>
-          <div class="email"><input type="text"  name="" placeholder="email address"></div>
-        </div>
-        <div>
-          <div class="subject"><input type="text"  name="" placeholder="subject"></div>
-        </div>
-      </div> -->
-      <textarea  class="text-area" type="text" placeholder="Your comment..">
-      </textarea>
-      <input type="submit" name="" class="submit-btn" value="Send Comment">
-    </div>
-  </div>
-</section> 

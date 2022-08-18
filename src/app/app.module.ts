@@ -31,6 +31,7 @@ import { StudHomePageComponent } from './home/stud-home-page/stud-home-page.comp
 import { CommHomePageComponent } from './home/comm-home-page/comm-home-page.component';
 import { AdminHomePageComponent } from './home/admin-home-page/admin-home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PostViewComponent } from './post-view/post-view.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     CommHomePageComponent,
     AdminHomePageComponent,
     NavbarComponent,
+    PostViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     EditorModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [
     AuthService,

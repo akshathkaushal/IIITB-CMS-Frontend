@@ -16,7 +16,7 @@
 }
 
 .wrapper {
-	margin-left: var(--sidebar-width);
+	/* margin-left: var(--sidebar-width); */
 	transition: all .3s ease-in-out;
   /* background-color: var(--dk-dark-bg); */
 }

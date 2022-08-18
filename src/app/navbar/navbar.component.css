@@ -34,12 +34,12 @@ body {
 }
 
 #wrapper {
-	margin-left: var(--sidebar-width);
+	/* margin-left: var(--sidebar-width); */
 	transition: all .3s ease-in-out;
 }
 
 #wrapper.fullwidth {
-	margin-left: 0;
+	/* margin-left: 0; */
 }
 
 
