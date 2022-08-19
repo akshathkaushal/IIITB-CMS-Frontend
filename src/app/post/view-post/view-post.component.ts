@@ -60,6 +60,7 @@ export class ViewPostComponent implements OnInit {
   private getCommentsForPost() {
     this.commentService.getAllCommentsForPost(this.postId).subscribe(data => {
       this.comments = data;
+      console.log("comments obtained are " ,this.comments);
     }, error => {
       throwError(error);
     });

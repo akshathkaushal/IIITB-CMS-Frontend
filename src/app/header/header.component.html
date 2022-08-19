@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="flex-grow-1">
-        <a aria-label="Home" class="logo" routerLink="/">
+        <a aria-label="Home" class="logo" routerLink="{{navigate}}">
         <img src="/assets/IIIT_Bangalore_Logo.svg" class="cms-icon-svg">
           <span class="cms-text">
             IIITB CMS
@@ -16,7 +16,7 @@
           </div>
           <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
             <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
-            {{rollNo}}
+            {{display}}
           </button>
         </div>
         <div *ngIf="!isLoggedIn">

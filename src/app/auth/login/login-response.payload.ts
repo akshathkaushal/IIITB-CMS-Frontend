@@ -1,6 +1,8 @@
 export interface LoginResponse {
-  authenticationToken: string;
-  refreshToken: string;
+  token: string;
+  email : string;
   expiresAt: Date;
   rollNo: string;
+  role : string;
+  name : string;
 }

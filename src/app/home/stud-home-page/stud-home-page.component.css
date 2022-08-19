@@ -1,0 +1,424 @@
+:host {
+	--dk-gray-100: #F3F4F6;
+	--dk-gray-200: #E5E7EB;
+	--dk-gray-300: #D1D5DB;
+	--dk-gray-400: #9CA3AF;
+	--dk-gray-500: #6B7280;
+	--dk-gray-600: #4B5563;
+	--dk-gray-700: #374151;
+	--dk-gray-800: #1F2937;
+	--dk-gray-900: #111827;
+	--dk-dark-bg: #313348;
+	--dk-darker-bg: #2a2b3d;
+	--navbar-bg-color: #6f6486;
+	--sidebar-bg-color: #252636;
+	--sidebar-width: 250px;
+}
+
+.wrapper {
+	/* margin-left: var(--sidebar-width); */
+	transition: all .3s ease-in-out;
+  /* background-color: var(--dk-dark-bg); */
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 18px;
+  }
+  .topbar {
+    background: var(--dk-dark-bg);
+    color: white;
+    width: 100%;
+    z-index: 9999;
+    padding: 5px 20px;
+  }
+  .topbar h1 {
+    /* cursor: pointer; */
+  }
+  .topbar nav {
+    margin-top: 25px;
+  }
+  .topbar nav ul {
+    /* padding: 0; */
+    padding-left: 35%;
+    margin: 0;
+  }
+  .topbar nav ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  .topbar nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  ul.post-grid {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  ul.post-grid li {
+    padding-left: 40px;
+    padding-right: 20px;;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: background linear 0.5s;
+    border-bottom: 1px solid #3a8bab;
+  }
+  ul.post-grid li:hover {
+    background: #3a8bab;
+    color: white;
+  }
+  ul.post-grid li:hover h3 {
+    color: white;
+  }
+  .content {
+    width: 100%;
+    position: relative;
+    padding: 20px 40px 20px;
+  }
+  h2,
+  h3 {
+    color: #3a8bab;
+  }
+  .post {
+    transition: 0.5s linear all;
+    opacity: 1;
+    padding-bottom: 30px;
+  }
+  .post cite {
+    display: inline-block;
+    padding: 10px 0;
+  }
+  .comments ul {
+    margin: 0;
+    padding: 0;
+  }
+  .comments ul li {
+    list-style-type: none;
+    padding: 20px 5px;
+    border-bottom: 1px #79B9D2 solid;
+  }
+  .post.ng-hide {
+    opacity: 0;
+  }
+  .post.ng-hide-add,
+  .post.ng-hide-remove {
+    display: block!important;
+  }
+  form {
+    width: 100%;
+  }
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+  }
+  .ng-invalid.ng-dirty {
+    border-color: red;
+  }
+  .ng-valid.ng-dirty {
+    border-color: green;
+  }
+  img {
+    max-width: 100%;
+  }
+  
+
+.bold
+{
+  font-weight: bold;
+  /* white-space: nowrap; */
+  display: inline;
+}
+
+.fa-heart:before {
+ content:"\f004";
+}
+
+.overflow
+{
+  display: inline-block;
+  max-width: 100ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.likes
+{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+
+/* IIITB-CMS CSS */
+.six h1 {
+	text-align: center;
+	color:#222; font-size:30px; font-weight:400;
+	text-transform: uppercase;
+	word-spacing: 1px; letter-spacing:2px; color:#abe2e2;
+  }
+  .six h1 span {
+	line-height:2em; padding-bottom:15px;
+	text-transform: none;
+	font-size:.7em;
+	font-weight: normal;
+	font-style: italic; font-family: "Playfair Display","Bookman",serif;
+	color:#999; letter-spacing:-0.005em; word-spacing:1px;
+	letter-spacing:none;
+  }
+  .six h1:after, .six h1:before {
+	/* position: absolute; */
+	left: 0;
+	bottom: 0;
+	width: 45px;
+	height: 4px;
+	content: "";
+	right: 45px; 
+	margin:auto;
+	background-color: #ccc;
+  }
+  .six h1:before { 
+  background-color:#d78b8b;
+	left:45px; width:90px;
+  }
+
+
+
+  /* FLOOPER BUTTON */
+
+.flooper-btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  border-radius: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flooper-btn:hover {
+  border-radius: 0px;
+}
+
+.flooper-btn::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  width: 200px;
+  height: 50px;
+  background: black;
+  transition: all 0.6s ease-in-out;
+}
+
+.flooper-btn:hover:before {
+  background: white;
+  border-radius: 0px;
+  transition: all 0.6s ease-in-out;
+}
+
+.flooper-btn::after {
+  content: "View profile";
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 100px;
+  border: 1px solid LawnGreen;
+  color: white;
+  text-shadow: 1px 1px 0px black;
+  font-weight: 400;
+  font-size: 12pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0) 0px,
+    LawnGreen 15px,
+    rgba(0, 0, 0, 0) 30px,
+    rgba(0, 0, 0, 0) 45px,
+    LawnGreen 70px,
+    rgba(0, 0, 0, 0) 49px
+  );
+  background-size: 2px;
+  background-position: top right;
+  background-repeat: repeat;
+  z-index: 10;
+  transition: all 0.6s ease-in-out;
+}
+
+.flooper-btn:hover::after {
+  background-size: 20%;
+  text-shadow: 1px 1px 0px white;
+  background-position: center;
+  border-radius: 0px;
+  color: black;
+  border: 1px solid black;
+  transform: rotateX(360deg);
+  box-shadow: 1px 1px 0px LawnGreen, 2px 2px 0px LawnGreen,
+    3px 3px 0px LawnGreen, 4px 4px 0px LawnGreen, 5px 5px 0px LawnGreen,
+    6px 6px 0px LawnGreen;
+  transition: all 0.6s ease-in-out;
+}
+
+
+
+
+/*
+  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+  box-shadow: [inset?] [top] [left] [blur] [size] [color];
+
+  Tips:
+    - We're setting all the blurs to 0 since we want a solid fill.
+    - Add the inset keyword so the box-shadow is on the inside of the element
+    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
+    - Multiple shadows can be stacked
+    - If you're animating multiple shadows, be sure to keep the same number of shadows on hover/focus as non-hover/focus (even if you have to create a transparent shadow) so the animation is smooth. Otherwise, you'll get something choppy.
+*/
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+.close:hover,
+.close:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.offset {
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover, .offset:focus {
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.fill {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+.raise {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+
+.up {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+.offset {
+  --color: #19bc8b;
+  --hover: #1973bc;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+/* body {
+  color: #fff;
+  background: #17181c;
+  font: 300 1em "Fira Sans", sans-serif;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+} */
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+
+
+
+
+
+

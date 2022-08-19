@@ -1,4 +1,5 @@
 export interface LoginRequestPayload {
-  rollNo: string;
+  // rollNo: string;
+  email: string;
   password: string;
 }

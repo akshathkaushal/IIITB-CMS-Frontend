@@ -3,8 +3,8 @@ import { PostModel } from '../post-model';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { VotePayload } from './vote-payload';
 import { VoteType } from './vote-type';
-import { VoteService } from '../vote.service';
-import { AuthService } from 'src/app/auth/shared/auth.service';
+import { VoteService } from '../../shared/vote.service';
+import { AuthService } from '../../auth/shared/auth.service';
 import { PostService } from '../post.service';
 import { throwError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -30,7 +30,8 @@ export class VoteButtonComponent implements OnInit {
 
     this.votePayload = {
       voteType: undefined,
-      postId: undefined
+      postId: undefined,
+      userEmail: ""
     }
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
   }
@@ -51,7 +52,8 @@ export class VoteButtonComponent implements OnInit {
     this.upvoteColor = '';
   }
 
-  private vote() {
+  private vote() 
+  {
     this.votePayload.postId = this.post.id;
     this.voteService.vote(this.votePayload).subscribe(() => {
       this.updateVoteDetails();

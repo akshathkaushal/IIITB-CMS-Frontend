@@ -1,0 +1,69 @@
+<!--  -->
+<app-navbar></app-navbar>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Yellowtail" rel="stylesheet"/>
+<div class="container box" *ngIf="postLoaded">
+  <div class="container inner text-center" >
+    <h1 class="header">{{post.postName}}</h1><br>
+  </div>
+  <div class="post-body">
+    <p ng-repeat="paragraph in post.body">
+      {{post.description}}
+    </p> 
+   </div>
+  <div class="container buttons">
+    <a type="button" class="nav-link" (click)="upvotePost(post.postId)">
+      <img src="https://img.icons8.com/external-anggara-blue-anggara-putra/30/000000/external-like-user-interface-basic-anggara-blue-anggara-putra.png"/>
+  </a>
+ 
+
+    <a type="button" class="nav-link" (click)="downvotePost(post.postId)">
+      <img src="https://img.icons8.com/external-anggara-filled-outline-anggara-putra/30/000000/external-dislike-multimedia-anggara-filled-outline-anggara-putra-3.png"/>
+    </a>
+
+    <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/>
+    {{post.voteCount}}
+
+    <img src="https://img.icons8.com/material-outlined/24/000000/comments--v1.png"/>
+    {{numberOfComments}}
+    <!-- <button class="start button" type="button">START</button>
+    <button class="reset button" type="button">RESET</button> -->
+  </div>
+</div>
+<div class="container box">
+  <div class="comment-section">
+    <h1 class="heading">Comments:</h1>
+    <div class="theSection" *ngFor="let comment of comments">
+      <img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/>
+      <span class="commented">{{comment.username}} : {{comment.text}} <br>
+        posted on {{comment.localDateTime.substring(0,10)}} at 
+        {{comment.localDateTime.substring(11,19)}} <br>
+      </span>
+      <br>
+      <!-- <img src="https://img.icons8.com/plasticine/50/000000/filled-trash.png"/> -->
+    </div>
+    <!-- <div class="theSection"><img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/><span class="commented">This is a sample comment</span></div>
+    <div class="theSection"><img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/><span class="commented">This is a sample comment-1</span></div> -->
+  </div>
+
+  
+
+  <div class="container inside" *ngIf="postLoaded">
+    <div class="left">
+      <textarea class="comment" type="text" placeholder="Write a comment..." [(ngModel)]="comment.text"></textarea>
+      <!-- <input class="comment" [(ngModel)]="comment.text" type="text" placeholder="Write a comment..." /> -->
+      
+
+      <button class="button insert" type="button" [disabled]="!comment.text" (click)="onSubmitComment(comment)">Insert a comment</button>
+    </div>
+    <!-- {{comment.text}} fadsfadsfads  -->
+  </div>
+  
+</div>
+
+
+
+
+
+
+<!--  -->

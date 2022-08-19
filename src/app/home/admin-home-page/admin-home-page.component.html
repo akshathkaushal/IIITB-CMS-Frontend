@@ -1,0 +1,72 @@
+
+<html>
+    <body>
+      <div class="container crud-table">
+        <div class="clearfix">
+
+          <div class="form-inline pull-right">
+            <button type="button" class="btn btn-warning" (click)="logOutAdmin()">
+              <span class="glyphicon glyphicon-plus"> </span>
+              Logout
+            </button>
+          </div>
+
+          <div class="form-inline pull-left">
+            <button type="button" class="btn btn-success" (click)="addTopic()"><span class="glyphicon glyphicon-plus"> </span>Add Topic</button>
+          </div>
+          
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th >Name</th>
+              <th >Description</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody class="text-center" *ngIf = "this.dataLoaded">
+            <tr *ngFor="let subpost of subposts">
+              <td>{{ subpost.id }}</td>
+              <td>{{ subpost.name }}</td>
+              <td>{{ subpost.description }}</td>
+              <!-- <td> -->
+                <!-- <button class="btn btn-primary" (click)="editUser(subpost)">Edit</button> -->
+              <!-- </td> -->
+              <td> 
+                <button class="btn btn-danger" (click)="deleteUser(subpost)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div class = "container-fluid mb-5" *ngIf="addTopicFormDisplay">
+            <h3> Topic add Form</h3>
+            <form #topicAdd="ngForm" (ngSubmit)="onAdd(topicAdd)" >
+
+    
+
+        <!-- <pre>{{ subpost | json }}</pre> -->
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="subpost.name" id="floatingInput" placeholder="name@example.com" name="email">
+                    <label for="floatingInput">Topic name</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="subpost.description" id="floatingInput" placeholder="name@example.com" name="email">
+                    <label for="floatingInput">Add Description</label>
+                  </div>
+        
+                  
+                    <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Add subpost</button>
+                  </div>
+            </form>
+        </div>
+
+
+      </div>
+    </body>
+  </html>

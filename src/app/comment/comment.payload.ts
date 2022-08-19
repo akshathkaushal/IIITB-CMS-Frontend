@@ -1,6 +1,10 @@
 export class CommentPayload {
-  text: string | any;
+  text!: string
   postId: number | any;
-  rollNo?: string;
+  email?: string;
   duration?: string;
+  localDateTime!: string;
+  username!: string;
+  comment!: string;
+
 }
