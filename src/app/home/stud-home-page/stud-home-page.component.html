@@ -38,7 +38,7 @@
             <ul class="post-grid" ng-show="blog.isSelected('blog')">
               <li ng-repeat="post in blog.posts" class="col-s-4" ng-click="blog.selectTab($index)">
                 <a type="button" class="nav-link" (click)="upvotePost(post.postId)">
-                  <img class="likes" src="https://img.icons8.com/ios-filled/30/000000/facebook-like.png"/><br>
+                  <img class="likes" src="https://img.icons8.com/ios-filled/30/000000/facebook-like.png"/> LIKE<br>
                 </a>
                 <a type="button" (click)="viewPost(post.postId)" class="desc" style="text-decoration: none; color:black;">
                 <h3>{{post.postName}}</h3>
@@ -52,8 +52,9 @@
                     {{post.localDateTime.substring(11,19)}} </p>
                 </cite>
                 <br>
-                <a type="button" class="nav-link" (click)="upvotePost(post.postId)">
+                <a type="button" class="nav-link" (click)="downvotePost(post.postId)">
                   <img class="likes" src="https://img.icons8.com/external-basicons-solid-edtgraphics/30/000000/external-Dislike-marketing-basicons-solid-edtgraphics.png"/>
+                  DISLIKE
                 </a>
               </li>
             </ul>

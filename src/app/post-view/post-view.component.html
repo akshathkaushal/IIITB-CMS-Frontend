@@ -12,9 +12,18 @@
     </p> 
    </div>
   <div class="container buttons">
-    <a href="view-post">
-    <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/></a>
+    <a type="button" class="nav-link" (click)="upvotePost(post.postId)">
+      <img src="https://img.icons8.com/external-anggara-blue-anggara-putra/30/000000/external-like-user-interface-basic-anggara-blue-anggara-putra.png"/>
+  </a>
+ 
+
+    <a type="button" class="nav-link" (click)="downvotePost(post.postId)">
+      <img src="https://img.icons8.com/external-anggara-filled-outline-anggara-putra/30/000000/external-dislike-multimedia-anggara-filled-outline-anggara-putra-3.png"/>
+    </a>
+
+    <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/>
     {{post.voteCount}}
+
     <img src="https://img.icons8.com/material-outlined/24/000000/comments--v1.png"/>
     {{numberOfComments}}
     <!-- <button class="start button" type="button">START</button>

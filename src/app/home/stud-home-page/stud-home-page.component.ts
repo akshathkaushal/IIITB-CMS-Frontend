@@ -17,7 +17,8 @@ export class StudHomePageComponent implements OnInit
 
   votePayload: VotePayload;
   constructor(private postService: PostService,private localStorage:LocalStorageService,
-    private voteService: VoteService,) { 
+    private voteService: VoteService,) 
+    { 
     this.votePayload = {
       voteType: undefined,
       postId: undefined,
@@ -62,8 +63,15 @@ export class StudHomePageComponent implements OnInit
   }
 
 
-  upvotePost(postId:any) {
+  upvotePost(postId:any) 
+  {
     this.votePayload.voteType = VoteType.UPVOTE;
+    this.vote(postId);
+  }
+
+  downvotePost(postId:any) 
+  {
+    this.votePayload.voteType = VoteType.DOWNVOTE;
     this.vote(postId);
   }
 
@@ -72,9 +80,14 @@ export class StudHomePageComponent implements OnInit
     this.votePayload.postId = postId;
     this.votePayload.userEmail = this.localStorage.retrieve("email");
     console.log("vote type is ",this.votePayload);
-    this.voteService.vote(this.votePayload).subscribe(() => {
-      this.updateVoteDetails();
-    }, error => {
+    console.log("post id is ",postId);
+    this.voteService.vote(this.votePayload).subscribe(() => 
+    {
+      // this.updateVoteDetails();
+      this.ngOnInit();
+    }, 
+    error => 
+    {
       alert("could not vote");
     });
   }

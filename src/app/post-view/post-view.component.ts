@@ -3,6 +3,9 @@ import { CommentPayload } from 'app/comment/comment.payload';
 import { CommentService } from 'app/comment/comment.service';
 import { PostModel } from 'app/shared/post-model';
 import { PostService } from 'app/shared/post.service';
+import { VotePayload } from 'app/shared/vote-button/vote-payload';
+import { VoteType } from 'app/shared/vote-button/vote-type';
+import { VoteService } from 'app/shared/vote.service';
 import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
@@ -13,7 +16,14 @@ import { LocalStorageService } from 'ngx-webstorage';
 export class PostViewComponent implements OnInit {
 
   constructor(private postService: PostService,private localStorage: LocalStorageService,
-    private commentService: CommentService) { }
+    private commentService: CommentService,private voteService: VoteService) 
+    { 
+      this.votePayload = {
+        voteType: undefined,
+        postId: undefined,
+        userEmail: ""
+      }
+    }
 
   post: PostModel | any;
   comment: CommentPayload = new CommentPayload();
@@ -22,6 +32,8 @@ export class PostViewComponent implements OnInit {
 
   postLoaded : boolean = false;
   numberOfComments: number = 0;
+  
+  votePayload: VotePayload;
 
   async ngOnInit(): Promise<void> 
   {
@@ -58,7 +70,8 @@ export class PostViewComponent implements OnInit {
     comment.email = email;
     comment.postId = postId;
     const res : any = await this.commentService.postComment(comment).toPromise();
-
+    comment.text = "";
+    this.ngOnInit();
     
   }
 
@@ -76,6 +89,37 @@ export class PostViewComponent implements OnInit {
     // }, error => {
     //   console.log(error)
     // });
+  }
+
+  upvotePost(postId:any) 
+  {
+    this.votePayload.voteType = VoteType.UPVOTE;
+    this.vote(postId);
+  }
+
+  downvotePost(postId:any) 
+  {
+    this.votePayload.voteType = VoteType.DOWNVOTE;
+    this.vote(postId);
+  }
+
+  private vote(postId:any) 
+  {
+    this.votePayload.postId = postId;
+    this.votePayload.userEmail = this.localStorage.retrieve("email");
+    this.votePayload.postId = this.localStorage.retrieve("postid");
+
+    console.log("vote type is ",this.votePayload);
+    console.log("post id is ",postId);
+    this.voteService.vote(this.votePayload).subscribe(() => 
+    {
+      // this.updateVoteDetails();
+      this.ngOnInit();
+    }, 
+    error => 
+    {
+      alert("could not vote");
+    });
   }
 
 }
